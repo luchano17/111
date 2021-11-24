@@ -1,0 +1,38 @@
+{
+  "name": "driving-direction",
+  "description": "Driving direction component for Adalo",
+  "version": "0.0.4",
+  "main": "index.js",
+  "license": "ISC",
+  "author": "Steven McKeown",
+  "scripts": {
+    "start": "adalo dev",
+    "login": "adalo login",
+    "publish": "adalo publish"
+  },
+  "adalo": {
+    "logo": "./example-logo.png",
+    "displayName": "Driving Direction",
+    "components": [
+      {
+        "name": "OverviewMap",
+        "manifest": "./src/components/OverviewMap/manifest.json"
+      }
+    ],
+    "iosInstallScript": "scripts/install_ios.sh",
+    "androidInstallScript": "scripts/install_android.sh"
+  },
+  "devDependencies": {
+    "@adalo/cli": "^0.0.43",
+    "react": "^16.9.0",
+    "react-art": "^16.6.0",
+    "react-dom": "^16.9.0",
+    "react-native-web": "^0.9.5"
+  },
+  "dependencies": {
+    "google-map-react": "^2.1.10",
+    "react-native-google-maps-directions": "^2.1.1",
+    "react-native-maps": "^0.29.4",
+    "react-native-maps-directions": "^1.8.0"
+  }
+}

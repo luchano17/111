@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Text, View, StyleSheet, Image, NativeModules } from "react-native";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import MapViewDirections from "react-native-maps-directions";
-import defaultMarker from "./assets/marker.png";
+import defaultMarker from "./assets/marker.png.png";
 
 const OverviewMap = ({
   originLatitude,

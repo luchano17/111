@@ -1,7 +1,7 @@
 {
   "name": "driving-direction",
   "description": "Driving direction component for Adalo",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "index.js",
   "license": "ISC",
   "author": "Steven McKeown",
@@ -30,9 +30,9 @@
     "react-native-web": "^0.9.5"
   },
   "dependencies": {
-    "google-map-react": "^2.1.10",
+    "google-map-react": "^1.1.5",
+    "react-native-maps": "^0.26.1",
     "react-native-google-maps-directions": "^2.1.1",
-    "react-native-maps": "^0.29.4",
     "react-native-maps-directions": "^1.8.0"
   }
 }

@@ -34,10 +34,13 @@ sed -i.bak '/targetSdkVersion/a\
 
 # AndroidManifest.xml
 
+if grep -q "com.google.android.geo.API_KEY" app/src/main/AndroidManifest.xml; then
+    echo "Already installed"
+else
 cat <<EOF > /tmp/adalo-sed
-/com.facebook.react.devsupport/a\\
+    /com.facebook.react.devsupport/a\\
     <meta-data android:name="com.google.android.geo.API_KEY" android:value="${key}" />\\
 EOF
 
-sed -i.bak "$(cat /tmp/adalo-sed)" app/src/main/AndroidManifest.xml
-
+    sed -i.bak "$(cat /tmp/adalo-sed)" app/src/main/AndroidManifest.xml
+fi

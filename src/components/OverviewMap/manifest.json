@@ -82,8 +82,8 @@
       }
     },
     {
-      "name": "destinationMarkerImage (must be 44x32)",
-      "displayName": "Destination Marker Image",
+      "name": "destinationMarkerImage",
+      "displayName": "Destination Marker Image (must be 44x32)",
       "type": "image",
       "enabled": { "destinationMarkerSource": "custom" }
     },

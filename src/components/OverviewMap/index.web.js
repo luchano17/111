@@ -4,11 +4,11 @@ import GoogleMapReact, { DirectionsRenderer } from "google-map-react";
 import defaultMarker from "./assets/marker.png.png";
 
 const OverviewMap = ({
-  originLatitude,
-  originLongitude,
-  destinationLatitude,
-  destinationLongitude,
-  apiKey,
+  originLatitude = 0,
+  originLongitude = 0,
+  destinationLatitude = 0,
+  destinationLongitude = 0,
+  apiKey = "",
   originMarkerImage,
   originMarkerSource,
   destinationMarkerImage,
@@ -22,6 +22,7 @@ const OverviewMap = ({
   const [directionsDisplay, setDirectionsDisplay] = useState()
   const [markers, setMarkers] = useState([])
   const updateMap = () => {
+    debugger
     if (myMaps && typeof myMaps.DirectionsRenderer === "function") {
       // clean previous directions rendered to the map;
       directionsDisplay.setMap(null)
@@ -46,14 +47,14 @@ const OverviewMap = ({
       };
       var icons = {
         start: new google.maps.MarkerImage(
-          originMarkerSource === "custom" ? originMarkerImage : defaultMarker,
+          originMarkerSource === "custom" && originMarkerImage ? originMarkerImage?.uri : defaultMarker,
           new google.maps.Size(44, 32),
           new google.maps.Point(0, 0),
           new google.maps.Point(22, 32)
         ),
         end: new google.maps.MarkerImage(
-          destinationMarkerSource === "custom"
-            ? destinationMarkerImage
+          destinationMarkerSource === "custom" && destinationMarkerImage
+            ? destinationMarkerImage?.uri
             : defaultMarker,
           new google.maps.Size(44, 32),
           new google.maps.Point(0, 0),
@@ -116,8 +117,8 @@ const OverviewMap = ({
       <GoogleMapReact
         bootstrapURLKeys={{ key: apiKey }}
         defaultCenter={{
-          lat: originLatitude,
-          lng: originLongitude,
+          lat: originLatitude || 0,
+          lng: originLongitude || 0,
         }}
         yesIWantToUseGoogleMapApiInternals
         onGoogleApiLoaded={setMap}
